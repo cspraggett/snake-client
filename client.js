@@ -10,7 +10,7 @@ const connect = () => {
   conn.on("connect", () => {
     console.log("Lets do this!");
     conn.write("Name: CJS");
-    setInterval(() => conn.write("Move: up"), 50);
+    // setInterval(() => conn.write("Move: up"), 50);
   });
 
   conn.on("data", data => {

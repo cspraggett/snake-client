@@ -17,6 +17,12 @@ let handleUserInput = key => {
     case "d":
       connection.write("Move: right");
       break;
+    case "p":
+      connection.write("Say: meep meep");
+      break;
+    case "o":
+      connection.write("Say: HI!");
+      break;
   }
 };
 

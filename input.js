@@ -1,27 +1,42 @@
+const {
+  ESCAPE_KEY,
+  MOVE_UP_KEY,
+  MOVE_DOWN_KEY,
+  MOVE_LEFT_KEY,
+  MOVE_RIGHT_KEY,
+  MESSAGES
+} = require("./constants");
+
 let connection;
 
 let handleUserInput = key => {
-  if (key === "\u0003") {
-    process.exit();
-  }
-  switch (key.toLowerCase()) {
-    case "w":
+  // if (key === ESCAPE) {
+  //   process.exit();
+  // }
+  switch (key.toUpperCase()) {
+    case ESCAPE_KEY:
+      process.exit();
+      break;
+    case MOVE_UP_KEY:
       connection.write("Move: up");
       break;
-    case "a":
+    case MOVE_LEFT_KEY:
       connection.write("Move: left");
       break;
-    case "s":
+    case MOVE_DOWN_KEY:
       connection.write("Move: down");
       break;
-    case "d":
+    case MOVE_RIGHT_KEY:
       connection.write("Move: right");
       break;
-    case "p":
-      connection.write("Say: meep meep");
+    case "P":
+      connection.write(`Say: ${MESSAGES.P}`);
       break;
-    case "o":
-      connection.write("Say: HI!");
+    case "O":
+      connection.write(`Say: ${MESSAGES.O}`);
+      break;
+    case "I":
+      connection.write(`Say: ${MESSAGES.I}`);
       break;
   }
 };

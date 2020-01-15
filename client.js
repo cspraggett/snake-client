@@ -7,6 +7,11 @@ const connect = () => {
   });
   conn.setEncoding("utf8");
 
+  conn.on("connect", () => {
+    console.log("Lets do this!");
+    conn.write("Name: CJS");
+  });
+
   conn.on("data", data => {
     console.log(data);
   });
